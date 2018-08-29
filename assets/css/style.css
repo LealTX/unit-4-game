@@ -1,0 +1,29 @@
+.bg { 
+
+    background-image: url(../images/JL_Background.png);
+
+    /* Center and scale the image nicely */
+    background-attachment: fixed;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: bottom;
+}
+
+img {
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+img:hover {
+    background: blue;
+}
+
+button {
+    margin: 0 auto; 
+    margin-top: 30px;
+    width: 150px;
+    display: flex; 
+    justify-content: center;
+}
