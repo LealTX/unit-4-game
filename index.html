@@ -15,20 +15,51 @@
 <body class="bg">
 
     <div class="container-fluid">
+        <div class="row pl-5 text-white pt-1">
+            <h2>Player</h2>
+        </div>
+        <div class="row">
+            <div class="playerDiv" id="playerSection"></div>
+            <button>Attack</button>
+        </div>
+           
+
+
         <div class="row pt-5">
-            <div class="col-4 pl-5">
-                <img src="./assets/images/DarkseidSmall.jpg">
+            <div class="batmanCard card" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/images/BatmanSmall.jpg" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Batman</h5>
+                    <p class="batman-HP"></p>
+                </div>
             </div>
-            <div class="col-4 pl-5">
-                <img src="./assets/images/BatmanSmall.jpg">
-                <img src="./assets/images/SupermanSmall.jpg">
-                <img src="./assets/images/DarkseidSmall.jpg">
-                <img src="./assets/images/BaneSmall.jpg">
-                <button>Attack</button>
+            <div class="supermanCard card" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/images/SupermanSmall.jpg" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Superman</h5>
+                    <p class="superman-HP"></p>
+                </div>
             </div>
-            <div class="col-4 pl-5">
-                <img src="./assets/images/DarkseidSmall.jpg">
+            <div class="darkseidCard card" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/images/DarkseidSmall.jpg" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Darkseid</h5>
+                    <p class="darkseid-HP"></p>
+                </div>
             </div>
+            <div class="baneCard card" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/images/BaneSmall.jpg" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Bane</h5>
+                    <p class="bane-HP"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row pl-5 text-white pt-1">
+            <h2>Oppenent</h2>
+        </div>
+        <div class="row">
+            <div class="oppenentCard" id="oppenentSection"></div>
         </div>
     </div>
 
@@ -36,8 +67,50 @@
         crossorigin="anonymous"></script>
 
     <script>
-        $("img").click(function () {
-            $(this).slideUp();
+        // JavaScript function that wraps everything
+        $(document).ready(function () {
+
+            var batman = $(".batmanCard");
+            var superman = $(".supermanCard");
+            var darkseid = $(".darkseidCard");
+            var bane = $(".baneCard");
+
+            var clicks = 0;
+
+            var batmanHP = 200;
+            var supermanHP = 200;
+            var darkseidHP = 200;
+            var baneHP = 200;
+
+            $(".batman-HP").text(200 + "hp");
+            $(".superman-HP").text(200 + "hp");
+            $(".darkseid-HP").text(200 + "hp");
+            $(".bane-HP").text(200 + "hp");
+
+            // $(".batmanCard").on("click", function () {
+            //     $(".batmanCard").appendTo("#playerSection");
+            // });
+            // $(".supermanCard").on("click", function () {
+            //     superman.addClass("d-none");
+            // });
+            // $(".darkseidCard").on("click", function () {
+            //     darkseid.addClass("d-none");
+            // });
+            // $(".baneCard").on("click", function () {
+            //     bane.addClass("d-none");
+            // });
+            $(".card").on("click", function () {
+            if (clicks === 0) {
+                    $(this).appendTo("#playerSection");
+                    clicks++;
+                }
+            else {
+                    $(this).appendTo("#oppenentSection");
+                }
+        });
+
+
+
         });
     </script>
 

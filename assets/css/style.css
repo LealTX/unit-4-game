@@ -1,6 +1,6 @@
 .bg { 
 
-    background-image: url(../images/JL_Background.png);
+    background-image: url(../images/JL_Background2.png);
 
     /* Center and scale the image nicely */
     background-attachment: fixed;
@@ -12,9 +12,10 @@
 
 img {
     cursor: pointer;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    /* margin-bottom: 20px;
+    margin-left: 20px; */
 }
+
 
 img:hover {
     background: blue;
@@ -24,6 +25,11 @@ button {
     margin: 0 auto; 
     margin-top: 30px;
     width: 150px;
-    display: flex; 
+    /* display: flex;  */
     justify-content: center;
+}
+
+.card-body {
+    padding: 0;
+    padding-left: 20px;
 }
