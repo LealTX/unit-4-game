@@ -20,34 +20,34 @@
         </div>
         <div class="row">
             <div class="playerDiv" id="playerSection"></div>
-            <button>Attack</button>
+            <button class="attackBtn btn-dark text-white">Attack</button>
         </div>
-           
+
 
 
         <div class="row pt-5">
-            <div class="batmanCard card" style="width: 18rem;">
+            <div class="batman card" style="width: 18rem;">
                 <img class="card-img-top" src="./assets/images/BatmanSmall.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Batman</h5>
                     <p class="batman-HP"></p>
                 </div>
             </div>
-            <div class="supermanCard card" style="width: 18rem;">
+            <div class="superman card" style="width: 18rem;">
                 <img class="card-img-top" src="./assets/images/SupermanSmall.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Superman</h5>
                     <p class="superman-HP"></p>
                 </div>
             </div>
-            <div class="darkseidCard card" style="width: 18rem;">
+            <div class="darkseid card" style="width: 18rem;">
                 <img class="card-img-top" src="./assets/images/DarkseidSmall.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Darkseid</h5>
                     <p class="darkseid-HP"></p>
                 </div>
             </div>
-            <div class="baneCard card" style="width: 18rem;">
+            <div class="bane card" style="width: 18rem;">
                 <img class="card-img-top" src="./assets/images/BaneSmall.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Bane</h5>
@@ -56,10 +56,10 @@
             </div>
         </div>
         <div class="row pl-5 text-white pt-1">
-            <h2>Oppenent</h2>
+            <h2>Opponent</h2>
         </div>
         <div class="row">
-            <div class="oppenentCard" id="oppenentSection"></div>
+            <div class="opponentCard" id="opponentSection"></div>
         </div>
     </div>
 
@@ -70,22 +70,47 @@
         // JavaScript function that wraps everything
         $(document).ready(function () {
 
-            var batman = $(".batmanCard");
-            var superman = $(".supermanCard");
-            var darkseid = $(".darkseidCard");
-            var bane = $(".baneCard");
+            // var batman = $(".batmanCard");
+            // var superman = $(".supermanCard");
+            // var darkseid = $(".darkseidCard");
+            // var bane = $(".baneCard");
+
+            var batman = {
+                "name": "Batman",
+                "health": 220,
+                "attack": 6,
+                "defense": 15,
+            }
+
+            var superman = {
+                "name": "Superman",
+                "health": 300,
+                "attack": 9,
+                "defense": 25,
+            }
+
+            var darkseid = {
+                "name": "Darkseid",
+                "health": 280,
+                "attack": 8,
+                "defense": 23,
+            }
+
+            var bane = {
+                "name": "Bane",
+                "health": 240,
+                "attack": 7,
+                "defense": 17,
+            }
 
             var clicks = 0;
+            var playerClass = null;
+            var opponentClass = null;
 
-            var batmanHP = 200;
-            var supermanHP = 200;
-            var darkseidHP = 200;
-            var baneHP = 200;
-
-            $(".batman-HP").text(200 + "hp");
-            $(".superman-HP").text(200 + "hp");
-            $(".darkseid-HP").text(200 + "hp");
-            $(".bane-HP").text(200 + "hp");
+            $(".batman-HP").text(batman.health + "hp");
+            $(".superman-HP").text(superman.health + "hp");
+            $(".darkseid-HP").text(darkseid.health + "hp");
+            $(".bane-HP").text(bane.health + "hp");
 
             // $(".batmanCard").on("click", function () {
             //     $(".batmanCard").appendTo("#playerSection");
@@ -100,16 +125,24 @@
             //     bane.addClass("d-none");
             // });
             $(".card").on("click", function () {
-            if (clicks === 0) {
+                if (clicks === 0) {
                     $(this).appendTo("#playerSection");
                     clicks++;
+                    playerClass = $(this).attr("class")
+                    playerClass = playerClass.replace(" card", "");
+                    // console.log("My player: "+playerClass);
                 }
-            else {
-                    $(this).appendTo("#oppenentSection");
+                else {
+                    $(this).appendTo("#opponentSection");
+                    opponentClass = $(this).attr("class")
+                    opponentClass = opponentClass.replace(" card", "");
+                    // console.log("My Opponent: "+opponentClass);
                 }
-        });
 
+            });
 
+            console.log("My player: " + playerClass);
+            console.log("My Opponent: " + opponentClass);
 
         });
     </script>
