@@ -34,13 +34,13 @@ button {
     padding: 0;
     padding-left: 20px;
 }
+h5 {
+    text-align: center;
+}
 
 p {
     color: red;
-}
-
-#playerSection {
-    border: solid 3px green;
+    text-align: center;
 }
 
 #opponentSection {
@@ -49,4 +49,18 @@ p {
 
 .card {
     margin-left: 10px;
+}
+
+.character-card {
+    display: inline-block;
+    background-color: white;
+    margin-right: 5px;
+}
+
+.start {
+    border: solid 5px green;
+}
+
+.playerSection {
+    border: solid 3px green;
 }
