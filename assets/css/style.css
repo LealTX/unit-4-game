@@ -1,17 +1,18 @@
 .bg { 
 
-    background-image: url(../images/JL_Background2.png);
+    background-image: url(../images/JL_Background.png);
 
     /* Center and scale the image nicely */
     background-attachment: fixed;
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: black;
-    background-position: bottom;
+    /* background-position: bottom; */
 }
 
 img {
     cursor: pointer;
+    align-content: center;
     /* margin-bottom: 20px;
     margin-left: 20px; */
 }
@@ -30,37 +31,58 @@ button {
     justify-content: center;
 }
 
-.card-body {
-    padding: 0;
-    padding-left: 20px;
+h1, h2 {
+    font-family: 'Bowlby One SC', cursive;
 }
+
+.messageText {
+    font-family: 'Sriracha', cursive;
+    color: yellow;
+}
+
 h5 {
     text-align: center;
+    font-family: 'Bowlby One SC', cursive;
 }
 
 p {
     color: red;
     text-align: center;
-}
-
-#opponentSection {
-    border: solid 3px red;
-}
-
-.card {
-    margin-left: 10px;
+    font-weight: bolder;
+    font-family: 'Bowlby One SC', cursive;
 }
 
 .character-card {
     display: inline-block;
     background-color: white;
-    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 .start {
     border: solid 5px green;
+    margin-left: 10px;
 }
 
 .playerSection {
-    border: solid 3px green;
+    border: solid 5px green;
+    margin-left: 20px;
+}
+
+
+.opponentSection {
+    border: solid 5px red;
+    margin-left: 20px;
+}
+
+.availableOpponents {
+    border: solid 5px yellow;
+    margin-left: 10px;
+}
+
+.pickPlayerDiv {
+    color: red;
+}
+
+.pickOpponentDiv{
+    color: red;
 }
